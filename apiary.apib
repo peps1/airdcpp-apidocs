@@ -10,11 +10,95 @@ AirDC++ Web API is used for communicating with AirDC++ file sharing application 
 
 ## Version history
 
-### API version 1 (2017-05-05)
+### API version 1
+
+#### Feature Level 5 pre-release (2020-XX-XX)
+
+##### Added endpoints
+
+* [Get stats](#reference/hashing/methods/get-stats)
+* [Update session](#reference/hubs/session/update-session)
+* [Get message highlight (Hub)](#reference/hub-sessions/messages/get-message-highlight)
+* [Get message highlight (Private)](#reference/private-chat-sessions/messages/get-message-highlight)
+* [Abort refresh](#reference/share/refresh-methods/abort-refresh)
+* [List refresh tasks](#reference/share/refresh-methods/list-refresh-tasks)
+* [Abort refresh task](#reference/share/refresh-methods/abort-refresh-task)
+
+##### Added event listeners and hooks
+
+* [Refresh started](#reference/hub-sessions/event-listeners/refresh-started)
+
+##### Compatible applications
+
+- [AirDC++ Web Client](https://airdcpp-web.github.io) 2.9.0 or newer
+- [AirDC++ for Windows](https://www.airdcpp.net) 3.60 or newer
+
+#### Feature Level 4 (2020-07-11)
+
+Menu API allows extension (or other API users) to add their own context menu items for various different item types.
+
+##### Added features
+
+* [Menu API](#reference/menus)
+
+##### Added event listeners and hooks
+
+* [Hub text command](#reference/hub-sessions/event-listeners/hub-text-command)
+* [Private chat text command](#reference/private-chat-sessions/event-listeners/private-chat-text-command)
+* [Search instance created](#reference/searching/event-listeners/search-instance-created)
+* [Search instance removed](#reference/searching/event-listeners/search-instance-removed)
+* [Hub searches queued](#reference/search-instances/event-listeners/hub-searches-queued)
+* [New file validation hook](#reference/share/validation-hooks/new-file-validation-hook)
+* [New directory validation hook](#reference/share/validation-hooks/new-directory-validation-hook)
+* [Search hinted user](#reference/users/miscellaneous/search-hinted-user)
+
+##### Compatible applications
+
+- [AirDC++ Web Client](https://airdcpp-web.github.io) 2.8.0 or newer
+- [AirDC++ for Windows](https://www.airdcpp.net) 3.60 or newer
+
+#### Feature Level 3 (2019-11-16)
+
+New endpoints to add/update/remove search types
+
+##### Added endpoints
+
+* [Get directory download](#reference/filelists/directory-download/get-directory-download)
+* [Add search type](#reference/searching/search-types/add-search-type)
+* [Update search type](#reference/searching/search-type/update-search-type)
+* [Remove search type](#reference/searching/search-type/remove-search-type)
+
+##### Added event listeners
+
+* [Search types updated](#reference/searching/event-listeners/search-types-updated)
+
+##### Compatible applications
+
+- [AirDC++ Web Client](https://airdcpp-web.github.io) 2.7.0 or newer
+- [AirDC++ for Windows](https://www.airdcpp.net) 3.60 or newer
+
+#### Feature Level 2 (2019-03-13)
+
+##### Added features
+
+* [Temp shared files](#reference/share/temp-shared-files)
+
+#### Added endpoints
+
+* [List temp shares](#reference/share/temp-shared-files/list-temp-shares)
+* [Add temp share](#reference/share/temp-shared-files/add-temp-share)
+* [Remove temp share](#reference/share/temp-shared-files/remove-temp-share)
+
+##### Compatible applications
+
+- [AirDC++ Web Client](https://airdcpp-web.github.io) 2.6.0 or newer
+- [AirDC++ for Windows](https://www.airdcpp.net) 3.54 or newer
+
+#### Feature Level 1 (2017-05-05)
 
 First documented API version
 
-#### Compatible applications
+##### Compatible applications
 
 - [AirDC++ Web Client](https://airdcpp-web.github.io) 2.0.0 or newer
 - [AirDC++ for Windows](https://www.airdcpp.net) 3.40 or newer
@@ -22,7 +106,7 @@ First documented API version
 
 ## Communicating with the API
 
-When communicating with the API locally, you can write an extension that is managed by the application itself (see the [Resources section](#resources) below)
+When communicating with the API locally, you can write an extension that is managed by the application itself (see the [Resources section](#introduction/resources) below)
 
 You may also access the API from external sources (such as shell scripts or command line). For example, the following terminal command can be used to rescan all your shared files:
 
